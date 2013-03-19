@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Keys extends JPanel {
 	
 	public Rectangle character;
-    public Rectangle NM;
+    public Rectangle StartingPoint;
     public Rectangle Top;
     public Rectangle Bottom;
     public Rectangle Left;
@@ -73,7 +73,7 @@ public class Keys extends JPanel {
         //if(i.imagesLoaded){
 
 		character = new Rectangle(52, 52, charW, charH);
-        NM = new Rectangle(52, 52, charW, charH);
+        StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
         Bottom = new Rectangle(0, 720, 1280, 1);
         Left = new Rectangle(0, 0, 1, 720);
@@ -228,7 +228,7 @@ public class Keys extends JPanel {
         g.fillRect(InvLine.x, InvLine.y, InvLine.width, InvLine.height);
         g.setColor(Color.WHITE);
         g.fillRect(InvLine2.x, InvLine2.y, InvLine2.width, InvLine2.height);
-        g.fillRect(NM.x, NM.y, NM.width, NM.height);
+        g.fillRect(StartingPoint.x, StartingPoint.y, StartingPoint.width, StartingPoint.height);
 
 
 
@@ -363,7 +363,7 @@ public class Keys extends JPanel {
             g.drawString("Pass!", 1233, 52);
         }
 
-        if(character.intersects(NM)) {
+        if(character.intersects(StartingPoint)) {
         g.setColor(Color.BLACK);
         g.setFont(g.getFont().deriveFont(30f));
         g.drawString("Press K", 258, 100);

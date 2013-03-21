@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java" line="89" />
-    <bookmark url="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java" line="245" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java" line="94" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" name="Default" comment="" />
@@ -10,9 +9,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Main.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1363231955528" ignored="false" />
     <file path="/Images.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362889433473" ignored="false" />
-    <file path="/Keys.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1363652153325" ignored="false" />
+    <file path="/Keys.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1363908079427" ignored="false" />
     <file path="/Display.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362888646447" ignored="false" />
-    <file path="/fragment.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362958823432" ignored="false" />
+    <file path="/fragment.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1363888804286" ignored="false" />
     <file path="/Player2.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362625364187" ignored="false" />
     <file path="/DisappearingMessage.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362627552074" ignored="false" />
     <file path="/BackgroundPanel.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362630165289" ignored="false" />
@@ -25,6 +24,8 @@
     <file path="$PROJECT_DIR$/../PacMan/src/gametest/Ghost.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362793401597" ignored="false" />
     <file path="$PROJECT_DIR$/../PacMan/src/gametest/PacModel.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362793401597" ignored="false" />
     <file path="$PROJECT_DIR$/../PacMan/src/gametest/Keys.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1362793401597" ignored="false" />
+    <file path="/Dummy.txt" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1363908554609" ignored="false" />
+    <file path="/Projectile.java" changelist="7ced6c5a-0b7e-4d54-b1d5-c4931256bbb4" time="1363908576552" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <file leaf-file-name="Keys.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="50" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.57239056">
+            <state line="284" column="29" selection-start="8895" selection-end="8896" vertical-scroll-proportion="0.37878788">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,6 +130,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -141,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/com/lax/gametest/Images.java" />
         <option value="$PROJECT_DIR$/src/com/lax/gametest/Main.java" />
         <option value="$PROJECT_DIR$/src/com/lax/gametest/Keys.java" />
+        <option value="$PROJECT_DIR$/src/com/lax/gametest/Projectile.java" />
       </list>
     </option>
   </component>
@@ -152,7 +162,7 @@
     <option name="width" value="1360" />
     <option name="height" value="742" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -240,6 +250,8 @@
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -251,6 +263,8 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -298,6 +312,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -324,19 +351,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -437,7 +451,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1360" height="742" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -526,20 +540,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="48" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Images.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="21" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Display.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="41" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
@@ -629,9 +629,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="44" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="50" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.57239056">
+        <state line="284" column="29" selection-start="8895" selection-end="8896" vertical-scroll-proportion="0.37878788">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -68,6 +68,7 @@ public class Keys extends JPanel {
     public boolean KeysIns = false;
     public boolean Dead = false;
     public boolean DeathScreen = false;
+    public boolean isMoving = true;
     
 
 
@@ -98,9 +99,9 @@ public class Keys extends JPanel {
         line7 = new Rectangle(580, 80, LineW, 1000);
         
        
-
-
-        f.addKeyListener(new KeyAdapter(){
+        
+        if(isMoving){
+        f.addKeyListener(new KeyAdapter(){       	
 			public void keyPressed(KeyEvent e){
 				if(e.getKeyCode() == KeyEvent.VK_D){
 					right = true;
@@ -152,8 +153,9 @@ public class Keys extends JPanel {
                      Restart = true;
                  }
                
-                }
-
+                } 
+       
+        
 			public void keyReleased(KeyEvent e){
                 if(e.getKeyCode() == KeyEvent.VK_D){
 					right = false;
@@ -197,7 +199,7 @@ public class Keys extends JPanel {
                 if(e.getKeyCode() == KeyEvent.VK_K) {
                     KeysIns = false;
                 }
-
+                isMoving = false;
 				}
 
 
@@ -216,7 +218,7 @@ public class Keys extends JPanel {
                 repaint();
              }
 
-        });
+        }); }
         }
 
 
@@ -266,6 +268,7 @@ public class Keys extends JPanel {
         g.fillRect(line7.x, line7.y, line7.width, line7.height);
         g.fillRect(Line7.x, Line7.y, Line7.width, Line7.height);
 
+        
 
         if(KeysIns){
             g.setColor(Color.BLACK);
@@ -274,12 +277,13 @@ public class Keys extends JPanel {
             g.drawString("is to get", 126, 200);
             g.drawString("your character", 126, 250);
             g.drawString("to the SafeZone", 126, 300);
+            g.drawString("Without touching the black line", 126, 350);
             g.setColor(Color.BLUE);
-            g.drawString("Keys:", 248, 350);
-            g.drawString("WASD / arrow", 251, 400);
-            g.drawString("keys to move", 251, 450);
-            g.drawString("R to Reset", 251, 500);
-            g.drawString("Escape to Quit", 251, 550);
+            g.drawString("Keys:", 248, 400);
+            g.drawString("WASD / arrow", 251, 450);
+            g.drawString("keys to move", 251, 500);
+            g.drawString("R to Reset", 251, 550);
+            g.drawString("Escape to Quit", 251, 600);
         
 
         
@@ -287,9 +291,7 @@ public class Keys extends JPanel {
         	g.setColor(Color.BLACK);
         	g.setFont(g.getFont().deriveFont(30f));
         	g.drawString("Press R to restart", 496, 300);
-        	character.x -= 1;
-            if(character.intersects(InvLine2)){
-            	character.x += 1;}
+        	isMoving = false;
             }
         	 
         }
@@ -298,7 +300,7 @@ public class Keys extends JPanel {
             g.setColor(Color.RED);
             g.setFont(g.getFont().deriveFont(30f));
             g.drawString("You Died", 496, 260);   
-            
+            isMoving = false;
             }
 
         if(Restart){
@@ -332,18 +334,20 @@ public class Keys extends JPanel {
         }
 
         if(character.intersects(Line))  {
-            Reset = true;            
+                     
             Dead = true;
-            StopReset1 = true;
+            isMoving = false;
             DeathScreen = true;
+           
 
         }
         if(character.intersects(Line2))  {
-        	Reset = true;            
+        	       
             Dead = true;
-            StopReset1 = true;
+            isMoving = false;
             DeathScreen = true;
-
+            
+            
         }
         if(character.intersects(Line3))  {
             Reset = true;

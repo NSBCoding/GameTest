@@ -115,7 +115,7 @@
       <file leaf-file-name="Keys.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="284" column="29" selection-start="8895" selection-end="8896" vertical-scroll-proportion="0.37878788">
+            <state line="284" column="29" selection-start="8895" selection-end="8896" vertical-scroll-proportion="-0.25252524">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,6 +131,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -254,7 +255,7 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="/Applications/GitHub.app" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -636,7 +637,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lax/gametest/Keys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="284" column="29" selection-start="8895" selection-end="8896" vertical-scroll-proportion="0.37878788">
+        <state line="284" column="29" selection-start="8895" selection-end="8896" vertical-scroll-proportion="-0.25252524">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

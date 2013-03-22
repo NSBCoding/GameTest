@@ -1,16 +1,19 @@
 package com.lax.gametest;
 
-import sun.applet.resources.MsgAppletViewer_ko;
+
 
 import javax.swing.*;
-import javax.swing.plaf.TableHeaderUI;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
+
 
 
 
 public class Keys extends JPanel {
+	
+	
+
+	private static final long serialVersionUID = 1L;
 	
 	public Rectangle character;
     public Rectangle StartingPoint;

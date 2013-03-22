@@ -1,6 +1,6 @@
 package com.lax.gametest;
 
-import java.awt.*;
+
 import javax.swing.*;
 
 
@@ -17,7 +17,7 @@ public class Main extends JFrame{
 		f.setResizable(false);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setTitle("Get to the other side!");
+		f.setTitle("GameTest");
 		f.setLocationRelativeTo(null);
 		f.setAlwaysOnTop(false);
 

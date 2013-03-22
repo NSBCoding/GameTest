@@ -3,8 +3,7 @@ package com.lax.gametest;
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
+
 
 
 public class Images extends JPanel {

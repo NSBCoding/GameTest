@@ -66,6 +66,8 @@ public class Keys extends JPanel {
     public boolean StopReset1 = false;
     public boolean Restart = false;
     public boolean KeysIns = false;
+    public boolean Dead = false;
+    public boolean DeathScreen = false;
     
 
 
@@ -83,7 +85,7 @@ public class Keys extends JPanel {
         Line = new Rectangle(1180, 302, LineW, LineH);
         Line2 = new Rectangle(1180, 0, LineW,  Line2H);
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
-        InvLine2 = new Rectangle(1180, 0, InvRectW, InvRectH);
+        InvLine2 = new Rectangle(1190, 0, InvRectW, InvRectH);
         Line3 = new Rectangle(109, 0, LineW, 533);
         Line4 = new Rectangle(235, 0, LineW, 303);
         Line5 = new Rectangle(403, 0, LineW, 118);
@@ -280,12 +282,25 @@ public class Keys extends JPanel {
             g.drawString("Escape to Quit", 251, 550);
         }
 
+        
+        if(DeathScreen){
+        	g.setColor(Color.BLACK);
+        	g.setFont(g.getFont().deriveFont(30f));
+        	g.drawString("Press R to restart", 496, 300);
+        	character.x += 1;
+        }
 
-         
+       if(Dead) {
+            g.setColor(Color.RED);
+            g.setFont(g.getFont().deriveFont(30f));
+            g.drawString("You Died", 496, 260);           
+            }
 
         if(Restart){
             character.x = 52;
             character.y = 52;
+            Dead = false;
+            DeathScreen = false;
 
         }
 
@@ -312,13 +327,17 @@ public class Keys extends JPanel {
         }
 
         if(character.intersects(Line))  {
-            Reset = true;
+            Reset = true;            
+            Dead = true;
             StopReset1 = true;
+            DeathScreen = true;
 
         }
         if(character.intersects(Line2))  {
-            Reset = true;
+        	Reset = true;            
+            Dead = true;
             StopReset1 = true;
+            DeathScreen = true;
 
         }
         if(character.intersects(Line3))  {

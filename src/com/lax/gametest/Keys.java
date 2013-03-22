@@ -280,20 +280,25 @@ public class Keys extends JPanel {
             g.drawString("keys to move", 251, 450);
             g.drawString("R to Reset", 251, 500);
             g.drawString("Escape to Quit", 251, 550);
-        }
+        
 
         
         if(DeathScreen){
         	g.setColor(Color.BLACK);
         	g.setFont(g.getFont().deriveFont(30f));
         	g.drawString("Press R to restart", 496, 300);
-        	character.x += 1;
+        	character.x -= 1;
+            if(character.intersects(InvLine2)){
+            	character.x += 1;}
+            }
+        	 
         }
 
        if(Dead) {
             g.setColor(Color.RED);
             g.setFont(g.getFont().deriveFont(30f));
-            g.drawString("You Died", 496, 260);           
+            g.drawString("You Died", 496, 260);   
+            
             }
 
         if(Restart){
@@ -426,8 +431,8 @@ public class Keys extends JPanel {
 		repaint();
 	}
 
+	}
 
-
-         }
+	
      //}
 

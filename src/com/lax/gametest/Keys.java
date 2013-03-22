@@ -17,7 +17,6 @@ public class Keys extends JPanel {
 	
 	public Rectangle character;
     public Rectangle StartingPoint;
-    public Rectangle Projectile;
     public Rectangle Top;
     public Rectangle Bottom;
     public Rectangle Left;
@@ -37,8 +36,6 @@ public class Keys extends JPanel {
     public Rectangle line7;
 
 
-    public int ProH = 5;
-    public int ProW = 5;
 	public int charW = 25;
 	public int charH = 25;
     public int LineH = 720;
@@ -69,9 +66,7 @@ public class Keys extends JPanel {
     public boolean StopReset1 = false;
     public boolean Restart = false;
     public boolean KeysIns = false;
-    public boolean isShooting = false;
-    public boolean reload = false;
-
+    
 
 
 
@@ -99,8 +94,8 @@ public class Keys extends JPanel {
         line6 = new Rectangle(511, 105, LineW, 1000);
         Line7 = new Rectangle(580, 0, LineW, 50);
         line7 = new Rectangle(580, 80, LineW, 1000);
-        Projectile = new Rectangle(character.x, character.y, ProW, ProH);
-        repaint();
+        
+       
 
 
         f.addKeyListener(new KeyAdapter(){
@@ -120,10 +115,8 @@ public class Keys extends JPanel {
                     LeftSide = true;
 
 				}
-                if(e.getKeyCode() == KeyEvent.VK_F){
-                    reload = true;
-                    Projectile.x = character.x;
-                    Projectile.y = character.y;
+                if(e.getKeyCode() == KeyEvent.VK_K){
+                    KeysIns = true;
                 }
                 if(e.getKeyCode() == KeyEvent.VK_LEFT){
                     left = true;
@@ -147,8 +140,6 @@ public class Keys extends JPanel {
                 if(e.getKeyCode() == KeyEvent.VK_P){
                     Passed = true; }
                 if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-                    isShooting = true;
-
                    //jumping = true;
                     //new Thread(new thread().start();
                      }
@@ -158,9 +149,7 @@ public class Keys extends JPanel {
                  if(e.getKeyCode() == KeyEvent.VK_R) {
                      Restart = true;
                  }
-                if(e.getKeyCode() == KeyEvent.VK_K){
-                    KeysIns = true;
-                }
+               
                 }
 
 			public void keyReleased(KeyEvent e){
@@ -180,11 +169,7 @@ public class Keys extends JPanel {
 				if(e.getKeyCode() == KeyEvent.VK_A){
 					left = false;
 		           mouseActive = false;
-                    LeftSide = false;   }
-                if(e.getKeyCode() == KeyEvent.VK_F){
-                    reload = false;
-
-                }
+                    LeftSide = false;   }                
                 if(e.getKeyCode() == KeyEvent.VK_LEFT){
                     left = false;
                     mouseActive = false;
@@ -207,7 +192,7 @@ public class Keys extends JPanel {
                 if(e.getKeyCode() == KeyEvent.VK_R) {
                     Restart = false;
                 }
-                if(e.getKeyCode() == KeyEvent.VK_K){
+                if(e.getKeyCode() == KeyEvent.VK_K) {
                     KeysIns = false;
                 }
 
@@ -262,7 +247,6 @@ public class Keys extends JPanel {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(character.x, character.y, character.width, character.height);
         g.setColor(Color.BLACK);
-        g.fillRect(Projectile.x, Projectile.y, Projectile.width, Projectile.height);
         g.fillRect(Top.x, Top.y, Top.width, Top.height);
         g.fillRect(Bottom.x, Bottom.y, Bottom.width, Bottom.height);
         g.fillRect(Left.x, Left.y, Left.width, Left.height);
@@ -297,19 +281,7 @@ public class Keys extends JPanel {
         }
 
 
-         if(reload){
-             isShooting = false;
-             Projectile.x = character.x;
-             Projectile.y = character.y;
-
-         }
-
-        if(isShooting){
-
-            Projectile.x += 1;
-            Projectile.y += 1;
-
-        }
+         
 
         if(Restart){
             character.x = 52;
@@ -389,15 +361,21 @@ public class Keys extends JPanel {
             StopReset1 = true;
 
         }
-
-
+        if(character.intersects(line7))  {
+            Reset = true;
+            StopReset1 = true;
+        }
+        if(character.intersects(Line7))  {
+            Reset = true;
+            StopReset1 = true;
+        }
 
         if(character.intersects(InvLine2)) {
 
             g.setColor(Color.BLUE);
             g.setFont(g.getFont().deriveFont(30f));
             g.drawString("You", 1233, 42);
-            g.drawString("Pass!", 1233, 52);
+            g.drawString("Pass!", 1233, 82);
         }
 
         if(character.intersects(StartingPoint)) {

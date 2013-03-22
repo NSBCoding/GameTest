@@ -17,7 +17,7 @@ public class Main extends JFrame{
 		f.setResizable(false);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setTitle("GameTest");
+		f.setTitle("GameTest!");
 		f.setLocationRelativeTo(null);
 		f.setAlwaysOnTop(false);
 

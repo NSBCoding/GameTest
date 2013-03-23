@@ -152,7 +152,9 @@ public class Keys extends JPanel {
                  if(e.getKeyCode() == KeyEvent.VK_R) {
                      Restart = true;
                  }
-               
+                 if(e.getKeyCode() == KeyEvent.VK_C) {
+                     mouseActive = true;}
+                 
                 } 
        
         
@@ -200,6 +202,8 @@ public class Keys extends JPanel {
                     KeysIns = false;
                 }
                 isMoving = false;
+                if(e.getKeyCode() == KeyEvent.VK_C) {
+                    mouseActive = false;}
 				}
 
 
@@ -212,7 +216,7 @@ public class Keys extends JPanel {
             public void mouseMoved(MouseEvent e){
                 mouse = new Point(e.getX(), e.getY() -25);
                  if(mouseActive){
-
+                	character.x = mouse.x;
                  }
 
                 repaint();
@@ -404,8 +408,8 @@ public class Keys extends JPanel {
 
             g.setColor(Color.BLUE);
             g.setFont(g.getFont().deriveFont(30f));
-            g.drawString("You", 1233, 42);
-            g.drawString("Pass!", 1233, 82);
+            g.drawString("You", 1215, 200);
+            g.drawString("Pass!", 1215, 250);
         }
 
         if(character.intersects(StartingPoint)) {

@@ -299,7 +299,8 @@ public class Keys extends JPanel {
        if(Dead) {
             g.setColor(Color.RED);
             g.setFont(g.getFont().deriveFont(30f));
-            g.drawString("You Died", 496, 260);   
+            g.drawString("You Died", 496, 260); 
+            g.drawString("Press R to restart", 496, 310); 
             isMoving = false;
             }
 
@@ -338,6 +339,7 @@ public class Keys extends JPanel {
             Dead = true;
             isMoving = false;
             DeathScreen = true;
+            character.x = 40000;
            
 
         }
@@ -346,7 +348,7 @@ public class Keys extends JPanel {
             Dead = true;
             isMoving = false;
             DeathScreen = true;
-            
+            character.x = 40000;
             
         }
         if(character.intersects(Line3))  {

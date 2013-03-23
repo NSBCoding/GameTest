@@ -32,6 +32,7 @@ public class Keys extends JPanel {
     public Rectangle Line8;
     public Rectangle Line9;
     public Rectangle Line10;
+    public Rectangle Line11;
     public Rectangle line3;
     public Rectangle line4;
     public Rectangle line5;
@@ -40,6 +41,7 @@ public class Keys extends JPanel {
     public Rectangle line8;
     public Rectangle line9;
     public Rectangle line10;
+    public Rectangle line11;
 
 
 	public int charW = 25;
@@ -110,6 +112,9 @@ public class Keys extends JPanel {
         line9 = new Rectangle(770, 250, LineW, 100000);
         Line10 = new Rectangle(838, 0, LineW, 500);
         line10 = new Rectangle(838, 550, LineW, 10000);
+        Line11 = new Rectangle(936, 0, LineW, 650);
+        line11 = new Rectangle(936, 700, LineW, 100000);
+        
        
     //KeyListener    
         if(isMoving){
@@ -290,6 +295,8 @@ public class Keys extends JPanel {
         g.fillRect(line9.x, line9.y, line9.width, line9.height);
         g.fillRect(Line10.x, Line10.y, Line10.width, Line10.height);
         g.fillRect(line10.x, line10.y, line10.width, line10.height);
+        g.fillRect(Line11.x, Line11.y, Line11.width, Line11.height);
+        g.fillRect(line11.x, line11.y, line11.width, line11.height);
         
 
   //Information If statement       
@@ -447,6 +454,14 @@ public class Keys extends JPanel {
             StopReset1 = true;}     
                                     
         if(character.intersects(Line10))  {
+                Reset = true;
+                StopReset1 = true;}
+        
+        if(character.intersects(line11))  {
+            Reset = true;            
+            StopReset1 = true;}      
+                                     
+        if(character.intersects(Line11))  {
                 Reset = true;
                 StopReset1 = true;}
         

@@ -31,6 +31,7 @@ public class Keys extends JPanel {
     public Rectangle Line7;
     public Rectangle Line8;
     public Rectangle Line9;
+    public Rectangle Line10;
     public Rectangle line3;
     public Rectangle line4;
     public Rectangle line5;
@@ -38,6 +39,7 @@ public class Keys extends JPanel {
     public Rectangle line7;
     public Rectangle line8;
     public Rectangle line9;
+    public Rectangle line10;
 
 
 	public int charW = 25;
@@ -106,6 +108,8 @@ public class Keys extends JPanel {
         line8 = new Rectangle(671, 400, LineW, 10000);
         Line9 = new Rectangle(770, 0, LineW, 200);
         line9 = new Rectangle(770, 250, LineW, 100000);
+        Line10 = new Rectangle(838, 0, LineW, 500);
+        line10 = new Rectangle(838, 550, LineW, 10000);
        
     //KeyListener    
         if(isMoving){
@@ -284,6 +288,9 @@ public class Keys extends JPanel {
         g.fillRect(line8.x, line8.y, line8.width, line8.height);
         g.fillRect(Line9.x, Line9.y, Line9.width, Line9.height);
         g.fillRect(line9.x, line9.y, line9.width, line9.height);
+        g.fillRect(Line10.x, Line10.y, Line10.width, Line10.height);
+        g.fillRect(line10.x, line10.y, line10.width, line10.height);
+        
 
   //Information If statement       
 
@@ -434,6 +441,15 @@ public class Keys extends JPanel {
         if(character.intersects(Line9))  {
                 Reset = true;
                 StopReset1 = true;}
+        
+        if(character.intersects(line10))  {
+            Reset = true;           
+            StopReset1 = true;}     
+                                    
+        if(character.intersects(Line10))  {
+                Reset = true;
+                StopReset1 = true;}
+        
 
        //If Statements for Invisible lines 
         

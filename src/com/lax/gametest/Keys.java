@@ -247,12 +247,12 @@ public class Keys extends JPanel {
 
 
 
-        if(RightSide)
-        g.setColor(Color.DARK_GRAY);
-        else
-		g.setColor(Color.BLACK);
+        if(RightSide)    
+        g.setColor(Color.BLUE);
+        else             
+		g.setColor(Color.BLUE);
         if(LeftSide)
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.BLUE);
         g.fillRect(character.x, character.y, character.width, character.height);
         g.setColor(Color.BLACK);
         g.fillRect(Top.x, Top.y, Top.width, Top.height);

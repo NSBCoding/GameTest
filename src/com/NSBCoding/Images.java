@@ -1,4 +1,4 @@
-package com.lax.gametest;
+package com.NSBCoding;
 
 import java.awt.Color;
 import javax.swing.*;

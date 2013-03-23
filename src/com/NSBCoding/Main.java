@@ -1,4 +1,4 @@
-package com.lax.gametest;
+package com.NSBCoding;
 
 
 import javax.swing.*;

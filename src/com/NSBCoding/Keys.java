@@ -112,8 +112,8 @@ public class Keys extends JPanel {
         line9 = new Rectangle(770, 250, LineW, 100000);
         Line10 = new Rectangle(838, 0, LineW, 500);
         line10 = new Rectangle(838, 550, LineW, 10000);
-        Line11 = new Rectangle(936, 0, LineW, 650);
-        line11 = new Rectangle(936, 700, LineW, 100000);
+        Line11 = new Rectangle(936, 0, LineW, 600);
+        line11 = new Rectangle(936, 630, LineW, 100000);
         
        
     //KeyListener    

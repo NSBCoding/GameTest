@@ -81,7 +81,8 @@ public class Keys extends JPanel {
 
 	public Keys(Display f, Images i){
         //if(i.imagesLoaded){
-
+		//Rectangles Being Drawn
+		
 		character = new Rectangle(52, 52, charW, charH);
         StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
@@ -106,7 +107,7 @@ public class Keys extends JPanel {
         Line9 = new Rectangle(770, 0, LineW, 200);
         line9 = new Rectangle(770, 250, LineW, 100000);
        
-        
+    //KeyListener    
         if(isMoving){
         f.addKeyListener(new KeyAdapter(){       	
 			public void keyPressed(KeyEvent e){
@@ -216,7 +217,7 @@ public class Keys extends JPanel {
 
 		});
 
-
+        //MouseListener
 
 		f.addMouseMotionListener(new MouseMotionAdapter() {
 
@@ -235,6 +236,7 @@ public class Keys extends JPanel {
 
 
     //}
+	
 	public void paintComponent(Graphics g){
         //if(Main.f.i.imagesLoaded) {
         super.paintComponent(g);
@@ -244,15 +246,15 @@ public class Keys extends JPanel {
 
         }
 
-
+ //Invisible lines being colored and filled
         g.setColor(getBackground());
         g.fillRect(InvLine.x, InvLine.y, InvLine.width, InvLine.height);
-        g.setColor(Color.WHITE);
+        g.setColor(getBackground());
         g.fillRect(InvLine2.x, InvLine2.y, InvLine2.width, InvLine2.height);
         g.fillRect(StartingPoint.x, StartingPoint.y, StartingPoint.width, StartingPoint.height);
 
 
-
+  //Rectangle Being colored and filled
 
         if(RightSide)    
         g.setColor(Color.BLUE);
@@ -283,7 +285,7 @@ public class Keys extends JPanel {
         g.fillRect(Line9.x, Line9.y, Line9.width, Line9.height);
         g.fillRect(line9.x, line9.y, line9.width, line9.height);
 
-        
+  //Information If statement       
 
         if(KeysIns){
             g.setColor(Color.BLACK);
@@ -302,7 +304,7 @@ public class Keys extends JPanel {
             g.drawString("R to Reset", 251, 650);
             g.drawString("Escape to Quit", 251, 670);
         
-
+   //IF Statements        
         
         if(DeathScreen){
         	g.setColor(Color.BLACK);
@@ -333,6 +335,8 @@ public class Keys extends JPanel {
             Reset = false;
         }
 
+    //If Statements for walls    
+        
         if(character.intersects(Left))  {
             character.x += 10;
             StopReset1 = true;
@@ -431,6 +435,8 @@ public class Keys extends JPanel {
                 Reset = true;
                 StopReset1 = true;}
 
+       //If Statements for Invisible lines 
+        
         if(character.intersects(InvLine2)) {
 
             g.setColor(Color.BLUE);
@@ -444,8 +450,11 @@ public class Keys extends JPanel {
         g.setFont(g.getFont().deriveFont(30f));
         g.drawString("Press K", 258, 100);
         g.drawString("for Instructions", 260, 145);
+        g.setColor(Color.BLUE);
+        g.drawString("WASD / arrow", 251,550);
+        g.drawString("keys to move", 251, 600);
         }
-
+  //If Statements for character movement
 
         if(jumping){
             character.y --;

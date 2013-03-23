@@ -33,6 +33,9 @@ public class Keys extends JPanel {
     public Rectangle Line9;
     public Rectangle Line10;
     public Rectangle Line11;
+    public Rectangle Line12;
+    public Rectangle Line13;
+    public Rectangle Line14;
     public Rectangle line3;
     public Rectangle line4;
     public Rectangle line5;
@@ -42,6 +45,9 @@ public class Keys extends JPanel {
     public Rectangle line9;
     public Rectangle line10;
     public Rectangle line11;
+    public Rectangle line12;
+    public Rectangle line13;
+    public Rectangle line14;
 
 
 	public int charW = 25;
@@ -114,6 +120,12 @@ public class Keys extends JPanel {
         line10 = new Rectangle(838, 550, LineW, 10000);
         Line11 = new Rectangle(936, 0, LineW, 600);
         line11 = new Rectangle(936, 630, LineW, 100000);
+        Line12 = new Rectangle(1016, 0, LineW, 600);
+        line12 = new Rectangle(1016, 630, LineW, 100000);
+        Line13 = new Rectangle(1066, 0, LineW, 600);
+        line13 = new Rectangle(1066, 630, LineW, 100000);
+        Line14 = new Rectangle(1131, 0, LineW, 600);
+        line14 = new Rectangle(1131, 630, LineW, 100000);
         
        
     //KeyListener    
@@ -297,6 +309,12 @@ public class Keys extends JPanel {
         g.fillRect(line10.x, line10.y, line10.width, line10.height);
         g.fillRect(Line11.x, Line11.y, Line11.width, Line11.height);
         g.fillRect(line11.x, line11.y, line11.width, line11.height);
+        g.fillRect(Line12.x, Line12.y, Line12.width, Line12.height);
+        g.fillRect(line12.x, line12.y, line12.width, line12.height);
+        g.fillRect(Line13.x, Line13.y, Line13.width, Line13.height);
+        g.fillRect(line13.x, line13.y, line13.width, line13.height);
+        g.fillRect(Line14.x, Line14.y, Line14.width, Line14.height);
+        g.fillRect(line14.x, line14.y, line14.width, line14.height);
         
 
   //Information If statement       
@@ -463,6 +481,30 @@ public class Keys extends JPanel {
                                      
         if(character.intersects(Line11))  {
                 Reset = true;
+                StopReset1 = true;}
+                                     
+        if(character.intersects(line12))  {
+            Reset = true;            
+            StopReset1 = true;}      
+                                     
+        if(character.intersects(Line12))  {
+                Reset = true;        
+                StopReset1 = true;}  
+                                     
+        if(character.intersects(line13))  {
+            Reset = true;            
+            StopReset1 = true;}      
+                                     
+        if(character.intersects(Line13))  {
+                Reset = true;        
+                StopReset1 = true;}  
+                                     
+        if(character.intersects(line14))  {
+            Reset = true;            
+            StopReset1 = true;}      
+                                     
+        if(character.intersects(Line14))  {
+                Reset = true;        
                 StopReset1 = true;}
         
 

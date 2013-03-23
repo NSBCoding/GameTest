@@ -182,7 +182,8 @@ public class Keys extends JPanel {
                      Restart = true;
                  }
                  if(e.getKeyCode() == KeyEvent.VK_C) {
-                     //mouseActive = true;}
+                     //mouseActive = true;
+                	 }
                  
                 } 
        
@@ -232,7 +233,8 @@ public class Keys extends JPanel {
                 }
                 isMoving = false;
                 if(e.getKeyCode() == KeyEvent.VK_C) {
-                    //mouseActive = false;}
+                    //mouseActive = false;
+                	}
 				}
 
 

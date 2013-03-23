@@ -30,12 +30,14 @@ public class Keys extends JPanel {
     public Rectangle Line6;
     public Rectangle Line7;
     public Rectangle Line8;
+    public Rectangle Line9;
     public Rectangle line3;
     public Rectangle line4;
     public Rectangle line5;
     public Rectangle line6;
     public Rectangle line7;
     public Rectangle line8;
+    public Rectangle line9;
 
 
 	public int charW = 25;
@@ -101,6 +103,8 @@ public class Keys extends JPanel {
         line7 = new Rectangle(580, 80, LineW, 1000);
         Line8 = new Rectangle(671, 0, LineW, 300);
         line8 = new Rectangle(671, 400, LineW, 10000);
+        Line9 = new Rectangle(770, 0, LineW, 200);
+        line9 = new Rectangle(770, 250, LineW, 100000);
        
         
         if(isMoving){
@@ -276,23 +280,27 @@ public class Keys extends JPanel {
         g.fillRect(Line7.x, Line7.y, Line7.width, Line7.height);
         g.fillRect(Line8.x, Line8.y, Line8.width, Line8.height);
         g.fillRect(line8.x, line8.y, line8.width, line8.height);
+        g.fillRect(Line9.x, Line9.y, Line9.width, Line9.height);
+        g.fillRect(line9.x, line9.y, line9.width, line9.height);
 
         
 
         if(KeysIns){
             g.setColor(Color.BLACK);
             g.setFont(g.getFont().deriveFont(30f));
-            g.drawString("Your goal", 126, 150);
+            g.drawString("Your goal", 123, 140);
             g.drawString("is to get", 126, 200);
             g.drawString("your character", 126, 250);
             g.drawString("to the SafeZone", 126, 300);
             g.drawString("Without touching the black line", 126, 350);
+            g.drawString("Careful that you can go to the left", 126, 400);
+            g.drawString("Through the walls but not right.", 126, 450);
             g.setColor(Color.BLUE);
-            g.drawString("Keys:", 248, 400);
-            g.drawString("WASD / arrow", 251, 450);
-            g.drawString("keys to move", 251, 500);
-            g.drawString("R to Reset", 251, 550);
-            g.drawString("Escape to Quit", 251, 600);
+            g.drawString("Keys:", 248, 500);
+            g.drawString("WASD / arrow", 251,550);
+            g.drawString("keys to move", 251, 600);
+            g.drawString("R to Reset", 251, 650);
+            g.drawString("Escape to Quit", 251, 670);
         
 
         
@@ -413,6 +421,13 @@ public class Keys extends JPanel {
             StopReset1 = true;}
             
         if(character.intersects(Line8))  {
+                Reset = true;
+                StopReset1 = true;}
+        if(character.intersects(line9))  {
+            Reset = true;          
+            StopReset1 = true;}    
+                                   
+        if(character.intersects(Line9))  {
                 Reset = true;
                 StopReset1 = true;}
 

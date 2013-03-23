@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-//test
+
 
 
 public class Keys extends JPanel {
@@ -120,12 +120,12 @@ public class Keys extends JPanel {
         line10 = new Rectangle(838, 550, LineW, 10000);
         Line11 = new Rectangle(936, 0, LineW, 600);
         line11 = new Rectangle(936, 630, LineW, 100000);
-        Line12 = new Rectangle(1016, 0, LineW, 600);
-        line12 = new Rectangle(1016, 630, LineW, 100000);
-        Line13 = new Rectangle(1066, 0, LineW, 600);
-        line13 = new Rectangle(1066, 630, LineW, 100000);
-        Line14 = new Rectangle(1131, 0, LineW, 600);
-        line14 = new Rectangle(1131, 630, LineW, 100000);
+        Line12 = new Rectangle(1016, 0, LineW, 50);
+        line12 = new Rectangle(1016, 100, LineW, 100000);
+        Line13 = new Rectangle(1066, 0, LineW, 450);
+        line13 = new Rectangle(1066, 500, LineW, 100000);
+        Line14 = new Rectangle(1131, 0, LineW, 10);
+        line14 = new Rectangle(1131, 60, LineW, 100000);
         
        
     //KeyListener    
@@ -182,7 +182,7 @@ public class Keys extends JPanel {
                      Restart = true;
                  }
                  if(e.getKeyCode() == KeyEvent.VK_C) {
-                     mouseActive = true;}
+                     //mouseActive = true;}
                  
                 } 
        
@@ -232,7 +232,7 @@ public class Keys extends JPanel {
                 }
                 isMoving = false;
                 if(e.getKeyCode() == KeyEvent.VK_C) {
-                    mouseActive = false;}
+                    //mouseActive = false;}
 				}
 
 
@@ -482,7 +482,7 @@ public class Keys extends JPanel {
         if(character.intersects(Line11))  {
                 Reset = true;
                 StopReset1 = true;}
-                                     
+                                    
         if(character.intersects(line12))  {
             Reset = true;            
             StopReset1 = true;}      

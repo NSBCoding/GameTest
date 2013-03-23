@@ -29,11 +29,13 @@ public class Keys extends JPanel {
     public Rectangle Line5;
     public Rectangle Line6;
     public Rectangle Line7;
+    public Rectangle Line8;
     public Rectangle line3;
     public Rectangle line4;
     public Rectangle line5;
     public Rectangle line6;
     public Rectangle line7;
+    public Rectangle line8;
 
 
 	public int charW = 25;
@@ -97,7 +99,8 @@ public class Keys extends JPanel {
         line6 = new Rectangle(511, 105, LineW, 1000);
         Line7 = new Rectangle(580, 0, LineW, 50);
         line7 = new Rectangle(580, 80, LineW, 1000);
-        
+        Line8 = new Rectangle(671, 0, LineW, 300);
+        line8 = new Rectangle(671, 400, LineW, 10000);
        
         
         if(isMoving){
@@ -271,6 +274,8 @@ public class Keys extends JPanel {
         g.fillRect(line6.x, line6.y, line6.width, line6.height);
         g.fillRect(line7.x, line7.y, line7.width, line7.height);
         g.fillRect(Line7.x, Line7.y, Line7.width, Line7.height);
+        g.fillRect(Line8.x, Line8.y, Line8.width, Line8.height);
+        g.fillRect(line8.x, line8.y, line8.width, line8.height);
 
         
 
@@ -403,6 +408,13 @@ public class Keys extends JPanel {
             Reset = true;
             StopReset1 = true;
         }
+        if(character.intersects(line8))  {
+            Reset = true;
+            StopReset1 = true;}
+            
+        if(character.intersects(Line8))  {
+                Reset = true;
+                StopReset1 = true;}
 
         if(character.intersects(InvLine2)) {
 

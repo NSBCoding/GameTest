@@ -11,16 +11,16 @@ public class Display extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 public JPanel gp = (JPanel) getGlassPane();
-public Images i;
+public ImagePanel i;
 public Keys k;
 
 
 
 public Display(){
-	i = new Images();
+	i = new ImagePanel();
 	gp.setVisible(true);
 	k = new Keys(this, i);
-    i.loadImages();
+    
 
 
 

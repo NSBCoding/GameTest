@@ -5,6 +5,7 @@ package com.NSBCoding;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.InputStream;
 
 
 
@@ -89,7 +90,7 @@ public class Keys extends JPanel {
 
     public Point mouse;
 
-	public Keys(Display f, Images i){
+	public Keys(Display f, ImagePanel i){
         //if(i.imagesLoaded){
 		//Rectangles Being Drawn
 		
@@ -260,9 +261,11 @@ public class Keys extends JPanel {
 
     //}
 	
+	@Override
 	public void paintComponent(Graphics g){
         //if(Main.f.i.imagesLoaded) {
         super.paintComponent(g);
+        
         this.setBackground(Color.WHITE);
         if(Reset){
             character.x -= 10;
@@ -547,7 +550,13 @@ public class Keys extends JPanel {
             if(down){
                 character.y += 1;
             }
-            g.drawImage(Main.f.i.bg, 0, 0, 1280, 720, null);
+            
+            
+               
+               
+			           
+            
+
 
 		repaint();
 	}

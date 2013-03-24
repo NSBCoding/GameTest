@@ -18,6 +18,7 @@ public class Keys extends JPanel {
 	
 	public Rectangle character;
 	public Rectangle Boss;
+	public Rectangle Boss2;
     public Rectangle StartingPoint;
     public Rectangle Top;
     public Rectangle Bottom;
@@ -62,7 +63,7 @@ public class Keys extends JPanel {
     public int InvRectH = 720;
     public int InvRectW = 100;
     public int BossW = 30;
-    public int BossH = 500;
+    public int BossH = 400;
     
 
     public long jumpingTime = 200;
@@ -70,9 +71,7 @@ public class Keys extends JPanel {
 
     public float verticalSpeed = 5.0f;
 
-
-
-
+    
 	public boolean right = false;
 	public boolean left = false;
 	public boolean mouseActive = false;
@@ -90,9 +89,11 @@ public class Keys extends JPanel {
     public boolean DeathScreen = false;
     public boolean isMoving = true;
     public boolean BossMoving = true;
+    public boolean BossMoving2 = true;
     public boolean BUp = true;
     public boolean BDown = false;
-    
+    public boolean BUp2 = true;
+    public boolean BDown2 = false;
 
 
 
@@ -104,6 +105,7 @@ public class Keys extends JPanel {
 		
 		character = new Rectangle(52, 52, charW, charH);
 		Boss = new Rectangle(315, 315, BossW, BossH);
+		Boss2 = new Rectangle(892, 130, BossW - 10, BossH - 200);
         StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
         Bottom = new Rectangle(0, 720, 1280, 1);
@@ -293,6 +295,7 @@ public class Keys extends JPanel {
         
         g.setColor(Color.RED);
         g.fillRect(Boss.x, Boss.y, Boss.width, Boss.height);
+        g.fillRect(Boss2.x, Boss2.y, Boss2.width, Boss2.height);
         
         if(RightSide)    
             g.setColor(Color.BLUE);
@@ -362,6 +365,8 @@ public class Keys extends JPanel {
    //IF Statements        
         
             
+            		
+
             
             
         if(DeathScreen){
@@ -399,7 +404,15 @@ public class Keys extends JPanel {
         }
         if(BDown){
         	BUp = false;
-        	Boss.y += 1;
+        	Boss.y += 1;       	
+        }
+        if(BUp2){
+        	BDown2 = false;       	
+        	Boss2.y -= 1;
+        }
+        if(BDown2){
+        	BUp2 = false;        	
+        	Boss2.y += 1;
         }
         
         if(BossMoving){
@@ -412,6 +425,19 @@ public class Keys extends JPanel {
          		BDown = false;
          		BUp = true;
          	}
+         	
+        	}
+        if(BossMoving2){
+        	 
+         
+         	if(Boss2.intersects(Top)){
+         		BUp2 = false;
+         		BDown2 = true;
+         	}
+         	if(Boss2.intersects(Bottom)){
+         		BDown2 = false;
+         		BUp2 = true;
+         	}
         	}
         	
         
@@ -419,6 +445,16 @@ public class Keys extends JPanel {
     //If Statements for walls    
         
         if(character.intersects(Boss))  {
+            
+            Dead = true;
+            isMoving = false;
+            DeathScreen = true;
+            character.x = 40000;
+           
+
+        }
+        
+        if(character.intersects(Boss2))  {
             
             Dead = true;
             isMoving = false;

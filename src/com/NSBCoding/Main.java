@@ -1,6 +1,5 @@
 package com.NSBCoding;
 
-
 import javax.swing.*;
 
 
@@ -23,4 +22,3 @@ public class Main extends JFrame{
 
     }
 }
-

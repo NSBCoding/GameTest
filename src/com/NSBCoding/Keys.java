@@ -5,7 +5,7 @@ package com.NSBCoding;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.InputStream;
+
 
 
 
@@ -61,8 +61,8 @@ public class Keys extends JPanel {
     public int LineInv = 60;
     public int InvRectH = 720;
     public int InvRectW = 100;
-    public int BossW = 10;
-    public int BossH = 20;
+    public int BossW = 30;
+    public int BossH = 500;
     
 
     public long jumpingTime = 200;
@@ -89,6 +89,9 @@ public class Keys extends JPanel {
     public boolean Dead = false;
     public boolean DeathScreen = false;
     public boolean isMoving = true;
+    public boolean BossMoving = true;
+    public boolean BUp = true;
+    public boolean BDown = false;
     
 
 
@@ -275,6 +278,7 @@ public class Keys extends JPanel {
         this.setBackground(Color.WHITE);
         if(Reset){
             character.x -= 10;
+           
 
         }
 
@@ -334,7 +338,9 @@ public class Keys extends JPanel {
         g.fillRect(line14.x, line14.y, line14.width, line14.height);
         
 
-  //Information If statement       
+  //Information If statement     
+        
+       
 
         if(KeysIns){
             g.setColor(Color.BLACK);
@@ -387,6 +393,29 @@ public class Keys extends JPanel {
             Reset = false;
         }
 
+        if(BUp){
+        	BDown = false;
+        	Boss.y -= 1;
+        }
+        if(BDown){
+        	BUp = false;
+        	Boss.y += 1;
+        }
+        
+        if(BossMoving){
+         	 
+         	if(Boss.intersects(Top)){
+         		BUp = false;
+         		BDown = true;
+         	}
+         	if(Boss.intersects(Bottom)){
+         		BDown = false;
+         		BUp = true;
+         	}
+        	}
+        	
+        
+        
     //If Statements for walls    
         
         if(character.intersects(Boss))  {

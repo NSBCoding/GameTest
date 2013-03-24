@@ -18,7 +18,7 @@ public class ImagePanel extends JPanel{
 	public BufferedImage image;
 
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-    InputStream input = classLoader.getResourceAsStream("url-4.jpg");
+    InputStream input = classLoader.getResourceAsStream("Bg.jpeg");
     
     public ImagePanel() {
        try {                

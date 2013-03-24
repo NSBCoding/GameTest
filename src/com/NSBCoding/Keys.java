@@ -609,8 +609,8 @@ public class Keys extends JPanel {
 
             g.setColor(Color.BLUE);
             g.setFont(g.getFont().deriveFont(30f));
-            g.drawString("You", 1215, 200);
-            g.drawString("Pass!", 1215, 250);
+            g.drawString("You", 496, 260);
+            g.drawString("Pass!", 496, 300);
         }
 
         if(character.intersects(StartingPoint)) {

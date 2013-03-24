@@ -17,6 +17,7 @@ public class Keys extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	public Rectangle character;
+	public Rectangle Boss;
     public Rectangle StartingPoint;
     public Rectangle Top;
     public Rectangle Bottom;
@@ -36,7 +37,7 @@ public class Keys extends JPanel {
     public Rectangle Line11;
     public Rectangle Line12;
     public Rectangle Line13;
-    public Rectangle Line14;
+    public Rectangle Line14;   
     public Rectangle line3;
     public Rectangle line4;
     public Rectangle line5;
@@ -49,6 +50,7 @@ public class Keys extends JPanel {
     public Rectangle line12;
     public Rectangle line13;
     public Rectangle line14;
+   
 
 
 	public int charW = 25;
@@ -59,6 +61,9 @@ public class Keys extends JPanel {
     public int LineInv = 60;
     public int InvRectH = 720;
     public int InvRectW = 100;
+    public int BossW = 10;
+    public int BossH = 20;
+    
 
     public long jumpingTime = 200;
 
@@ -95,6 +100,7 @@ public class Keys extends JPanel {
 		//Rectangles Being Drawn
 		
 		character = new Rectangle(52, 52, charW, charH);
+		Boss = new Rectangle(315, 315, BossW, BossH);
         StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
         Bottom = new Rectangle(0, 720, 1280, 1);
@@ -279,16 +285,22 @@ public class Keys extends JPanel {
         g.fillRect(InvLine2.x, InvLine2.y, InvLine2.width, InvLine2.height);
         g.fillRect(StartingPoint.x, StartingPoint.y, StartingPoint.width, StartingPoint.height);
 
+  // Boss and character being colored and filled
+        
+        g.setColor(Color.RED);
+        g.fillRect(Boss.x, Boss.y, Boss.width, Boss.height);
+        
+        if(RightSide)    
+            g.setColor(Color.BLUE);
+            else             
+    		g.setColor(Color.BLUE);
+            if(LeftSide)
+            g.setColor(Color.BLUE);
+            g.fillRect(character.x, character.y, character.width, character.height);
 
   //Rectangle Being colored and filled
 
-        if(RightSide)    
-        g.setColor(Color.BLUE);
-        else             
-		g.setColor(Color.BLUE);
-        if(LeftSide)
-        g.setColor(Color.BLUE);
-        g.fillRect(character.x, character.y, character.width, character.height);
+        
         g.setColor(Color.BLACK);
         g.fillRect(Top.x, Top.y, Top.width, Top.height);
         g.fillRect(Bottom.x, Bottom.y, Bottom.width, Bottom.height);
@@ -334,8 +346,8 @@ public class Keys extends JPanel {
             g.drawString("Without touching the black line", 126, 350);
             g.drawString("Careful that you can go to the left", 126, 400);
             g.drawString("Through the walls but not right.", 126, 450);
-            g.setColor(Color.BLUE);
-            g.drawString("Keys:", 248, 500);
+            g.drawString("Be careful not to touch the Boss.", 126, 500);
+            g.setColor(Color.BLUE);           
             g.drawString("WASD / arrow", 251,550);
             g.drawString("keys to move", 251, 600);
             g.drawString("R to Reset", 251, 650);
@@ -343,6 +355,9 @@ public class Keys extends JPanel {
         
    //IF Statements        
         
+            
+            
+            
         if(DeathScreen){
         	g.setColor(Color.BLACK);
         	g.setFont(g.getFont().deriveFont(30f));
@@ -373,6 +388,16 @@ public class Keys extends JPanel {
         }
 
     //If Statements for walls    
+        
+        if(character.intersects(Boss))  {
+            
+            Dead = true;
+            isMoving = false;
+            DeathScreen = true;
+            character.x = 40000;
+           
+
+        }
         
         if(character.intersects(Left))  {
             character.x += 10;

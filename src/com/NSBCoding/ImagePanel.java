@@ -12,7 +12,10 @@ import javax.swing.JPanel;
 
 public class ImagePanel extends JPanel{
 
-    public BufferedImage image;
+    
+	private static final long serialVersionUID = 1L;
+
+	public BufferedImage image;
 
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
     InputStream input = classLoader.getResourceAsStream("url-4.jpg");

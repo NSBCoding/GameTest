@@ -19,6 +19,7 @@ public class Keys extends JPanel {
 	public Rectangle character;
 	public Rectangle Boss;
 	public Rectangle Boss2;
+	public Rectangle Boss3;
     public Rectangle StartingPoint;
     public Rectangle Top;
     public Rectangle Bottom;
@@ -90,22 +91,32 @@ public class Keys extends JPanel {
     public boolean isMoving = true;
     public boolean BossMoving = true;
     public boolean BossMoving2 = true;
+    public boolean BossMoving3 = true;
     public boolean BUp = true;
     public boolean BDown = false;
     public boolean BUp2 = true;
     public boolean BDown2 = false;
+    public boolean BUp3 = true;
+    public boolean BDown3 = false;
+    public boolean passed = true;
+    public boolean ppassed = false;
 
 
-
+ 
     public Point mouse;
-
+    
 	public Keys(Display f, ImagePanel i){
         //if(i.imagesLoaded){
 		//Rectangles Being Drawn
-		
+		if(ppassed){
+			
+		passed = false;
+		}
+		if(passed){
 		character = new Rectangle(52, 52, charW, charH);
 		Boss = new Rectangle(315, 315, BossW, BossH);
 		Boss2 = new Rectangle(892, 130, BossW - 10, BossH - 200);
+		Boss3 = new Rectangle(629, 38, BossW - 10, BossH - 300);
         StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
         Bottom = new Rectangle(0, 720, 1280, 1);
@@ -268,7 +279,7 @@ public class Keys extends JPanel {
         }); }
         }
 
-
+	}
 
     //}
 	
@@ -296,6 +307,7 @@ public class Keys extends JPanel {
         g.setColor(Color.RED);
         g.fillRect(Boss.x, Boss.y, Boss.width, Boss.height);
         g.fillRect(Boss2.x, Boss2.y, Boss2.width, Boss2.height);
+        g.fillRect(Boss3.x, Boss3.y, Boss3.width, Boss3.height);
         
         if(RightSide)    
             g.setColor(Color.BLUE);
@@ -342,7 +354,6 @@ public class Keys extends JPanel {
         
 
   //Information If statement     
-        
        
 
         if(KeysIns){
@@ -414,6 +425,14 @@ public class Keys extends JPanel {
         	BUp2 = false;        	
         	Boss2.y += 1;
         }
+        if(BUp3){
+        	BDown3 = false;       	
+        	Boss3.y -= 1;
+        }
+        if(BDown3){
+        	BUp3 = false;        	
+        	Boss3.y += 1;
+        }
         
         if(BossMoving){
          	 
@@ -437,6 +456,18 @@ public class Keys extends JPanel {
          	if(Boss2.intersects(Bottom)){
          		BDown2 = false;
          		BUp2 = true;
+         	}
+        	}
+        if(BossMoving3){
+       	 
+            
+         	if(Boss3.intersects(Top)){
+         		BUp3 = false;
+         		BDown3 = true;
+         	}
+         	if(Boss3.intersects(Bottom)){
+         		BDown3 = false;
+         		BUp3 = true;
          	}
         	}
         	
@@ -611,7 +642,17 @@ public class Keys extends JPanel {
             g.setFont(g.getFont().deriveFont(30f));
             g.drawString("You", 496, 260);
             g.drawString("Pass!", 496, 300);
+            ppassed = true;
         }
+        
+      
+        if(ppassed){
+			g.setColor(Color.BLUE);
+            g.setFont(g.getFont().deriveFont(30f));
+            g.drawString("You", 496, 260);
+            g.drawString("Pass!", 496, 300);
+	
+		} 
 
         if(character.intersects(StartingPoint)) {
         g.setColor(Color.BLACK);
@@ -652,7 +693,6 @@ public class Keys extends JPanel {
 	}
 
 	}
-
 	
      //}
 

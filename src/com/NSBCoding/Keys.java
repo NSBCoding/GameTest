@@ -129,7 +129,7 @@ public class Keys extends JPanel {
         Line = new Rectangle(1180, 302, LineW, LineH);
         Line2 = new Rectangle(1180, 0, LineW,  Line2H);
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
-        InvLine2 = new Rectangle(1190, 0, InvRectW, InvRectH);
+        InvLine2 = new Rectangle(1200, 0, InvRectW, InvRectH);
         Line3 = new Rectangle(109, 0, LineW, 533);
         Line4 = new Rectangle(235, 0, LineW, 303);
         Line5 = new Rectangle(403, 0, LineW, 118);
@@ -682,6 +682,15 @@ public class Keys extends JPanel {
 
        //If Statements for Invisible lines 
         
+        if(character.intersects(InvLine)) {
+
+            g.setColor(Color.BLUE);
+            g.setFont(g.getFont().deriveFont(30f));
+            g.drawString("You", 496, 260);
+            g.drawString("Pass!", 496, 300);
+           
+        }
+        
         if(character.intersects(InvLine2)) {
 
             g.setColor(Color.BLUE);
@@ -690,7 +699,7 @@ public class Keys extends JPanel {
             g.drawString("Pass!", 496, 300);
             System.out.println("Ended");
             try {
-				Thread.sleep(20000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				
 				e.printStackTrace();

@@ -106,8 +106,7 @@ public class Keys extends JPanel {
     public boolean BDown4 = false;
     public boolean BUp5 = true;
     public boolean BDown5 = false;
-    public boolean passed = true;
-    public boolean ppassed = false;
+   
 
 
  
@@ -116,11 +115,7 @@ public class Keys extends JPanel {
 	public Keys(Display f, ImagePanel i){
         //if(i.imagesLoaded){
 		//Rectangles Being Drawn
-		if(ppassed){
-			
-		passed = false;
-		}
-		if(passed){
+		
 		character = new Rectangle(52, 52, charW, charH);
 		Boss = new Rectangle(315, 315, BossW, BossH);
 		Boss2 = new Rectangle(892, 130, BossW - 10, BossH - 200);
@@ -159,8 +154,8 @@ public class Keys extends JPanel {
         line13 = new Rectangle(1066, 500, LineW, 100000);
         Line14 = new Rectangle(1131, 0, LineW, 10);
         line14 = new Rectangle(1131, 60, LineW, 100000);
-		}
-       
+		
+      
     //KeyListener    
         if(isMoving){
         f.addKeyListener(new KeyAdapter(){       	
@@ -693,18 +688,11 @@ public class Keys extends JPanel {
             g.setFont(g.getFont().deriveFont(30f));
             g.drawString("You", 496, 260);
             g.drawString("Pass!", 496, 300);
-            ppassed = true;
+            
         }
         
       
-        if(ppassed){
-			g.setColor(Color.BLUE);
-            g.setFont(g.getFont().deriveFont(30f));
-            g.drawString("You", 496, 260);
-            g.drawString("Pass!", 496, 300);
-	
-		} 
-
+       
         if(character.intersects(StartingPoint)) {
         g.setColor(Color.BLACK);
         g.setFont(g.getFont().deriveFont(30f));

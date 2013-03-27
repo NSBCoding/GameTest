@@ -72,7 +72,7 @@ public class Keys extends JPanel {
     public long jumpingTime = 200;
 
 
-    public float verticalSpeed = 5.0f;
+    public float verticalSpeed = 1f;
 
     
 	public boolean right = false;
@@ -129,30 +129,31 @@ public class Keys extends JPanel {
         Line = new Rectangle(1180, 302, LineW, LineH);
         Line2 = new Rectangle(1180, 0, LineW,  Line2H);
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
-        InvLine2 = new Rectangle(1200, 0, InvRectW, InvRectH);
-        Line3 = new Rectangle(109, 0, LineW, 533);
-        Line4 = new Rectangle(235, 0, LineW, 303);
-        Line5 = new Rectangle(403, 0, LineW, 118);
-        Line6 = new Rectangle(511, 0, LineW, 24);
-        line3 = new Rectangle(109, 565, LineW, 1000);
-        line4 = new Rectangle(235, 335, LineW, 1000);
-        line5 = new Rectangle(403, 150, LineW, 1000);
-        line6 = new Rectangle(511, 105, LineW, 1000);
+        InvLine2 = new Rectangle(1220, 0, InvRectW, InvRectH);
+        Line3 = new Rectangle(109, 0, LineW, 500);
+        Line4 = new Rectangle(235, 0, LineW, 300);
+        Line5 = new Rectangle(403, 0, LineW, 120);
+        Line6 = new Rectangle(511, 0, LineW, 30);
         Line7 = new Rectangle(580, 0, LineW, 50);
-        line7 = new Rectangle(580, 80, LineW, 1000);
         Line8 = new Rectangle(671, 0, LineW, 300);
-        line8 = new Rectangle(671, 400, LineW, 10000);
         Line9 = new Rectangle(770, 0, LineW, 200);
-        line9 = new Rectangle(770, 250, LineW, 100000);
         Line10 = new Rectangle(838, 0, LineW, 500);
-        line10 = new Rectangle(838, 550, LineW, 10000);
         Line11 = new Rectangle(936, 0, LineW, 600);
-        line11 = new Rectangle(936, 630, LineW, 100000);
         Line12 = new Rectangle(1016, 0, LineW, 50);
-        line12 = new Rectangle(1016, 100, LineW, 100000);
         Line13 = new Rectangle(1066, 0, LineW, 450);
-        line13 = new Rectangle(1066, 500, LineW, 100000);
         Line14 = new Rectangle(1131, 0, LineW, 10);
+        
+        line3 = new Rectangle(109, 600, LineW, 1000);
+        line4 = new Rectangle(235, 360, LineW, 1000);
+        line5 = new Rectangle(403, 160, LineW, 1000);
+        line6 = new Rectangle(511, 70, LineW, 1000);        
+        line7 = new Rectangle(580, 80, LineW, 1000);        
+        line8 = new Rectangle(671, 400, LineW, 10000);      
+        line9 = new Rectangle(770, 250, LineW, 100000);      
+        line10 = new Rectangle(838, 550, LineW, 10000);       
+        line11 = new Rectangle(936, 630, LineW, 100000);      
+        line12 = new Rectangle(1016, 100, LineW, 100000);       
+        line13 = new Rectangle(1066, 500, LineW, 100000);        
         line14 = new Rectangle(1131, 60, LineW, 100000);
 		
       
@@ -210,7 +211,7 @@ public class Keys extends JPanel {
                      Restart = true;
                  }
                  if(e.getKeyCode() == KeyEvent.VK_C) {
-                     mouseActive = true;
+                     //mouseActive = true;
                 	 }
                  
                 } 
@@ -261,7 +262,7 @@ public class Keys extends JPanel {
                 }
                 isMoving = false;
                 if(e.getKeyCode() == KeyEvent.VK_C) {
-                    mouseActive = false;
+                    //mouseActive = false;
                 	}
 				}
 
@@ -540,6 +541,34 @@ public class Keys extends JPanel {
            
 
         }
+        if(character.intersects(Boss3))  {
+            
+            Dead = true;
+            isMoving = false;
+            DeathScreen = true;
+            character.x = 40000;
+           
+
+        }
+        if(character.intersects(Boss4))  {
+    
+        	Dead = true;
+        	isMoving = false;
+    	DeathScreen = true;
+    	character.x = 40000;
+    
+
+        }
+        if(character.intersects(Boss5))  {
+        	
+        	Dead = true;
+        	isMoving = false;
+        	DeathScreen = true;
+        	character.x = 40000;
+   
+
+        }
+
         
         if(character.intersects(Left))  {
             character.x += 10;
@@ -699,7 +728,7 @@ public class Keys extends JPanel {
             g.drawString("Pass!", 496, 300);
             System.out.println("Ended");
             try {
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				
 				e.printStackTrace();
@@ -727,16 +756,16 @@ public class Keys extends JPanel {
         }
 
 		if(right){
-			character.x += 1;
+			character.x += verticalSpeed;
         }
 		if(left){
-			character.x -= 1;
+			character.x -= verticalSpeed;
 		}
             if(up)
-                character.y += -1;
+                character.y += -verticalSpeed;
 
             if(down){
-                character.y += 1;
+                character.y += verticalSpeed;
             }
             
             

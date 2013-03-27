@@ -210,7 +210,7 @@ public class Keys extends JPanel {
                      Restart = true;
                  }
                  if(e.getKeyCode() == KeyEvent.VK_C) {
-                     //mouseActive = true;
+                     mouseActive = true;
                 	 }
                  
                 } 
@@ -261,7 +261,7 @@ public class Keys extends JPanel {
                 }
                 isMoving = false;
                 if(e.getKeyCode() == KeyEvent.VK_C) {
-                    //mouseActive = false;
+                    mouseActive = false;
                 	}
 				}
 
@@ -688,6 +688,15 @@ public class Keys extends JPanel {
             g.setFont(g.getFont().deriveFont(30f));
             g.drawString("You", 496, 260);
             g.drawString("Pass!", 496, 300);
+            System.out.println("Ended");
+            try {
+				Thread.sleep(20000);
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
+            System.exit(0);	
+            
             
         }
         

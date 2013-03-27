@@ -20,6 +20,8 @@ public class Keys extends JPanel {
 	public Rectangle Boss;
 	public Rectangle Boss2;
 	public Rectangle Boss3;
+	public Rectangle Boss4;
+	public Rectangle Boss5;
     public Rectangle StartingPoint;
     public Rectangle Top;
     public Rectangle Bottom;
@@ -92,12 +94,18 @@ public class Keys extends JPanel {
     public boolean BossMoving = true;
     public boolean BossMoving2 = true;
     public boolean BossMoving3 = true;
+    public boolean BossMoving4 = true;
+    public boolean BossMoving5 = true;
     public boolean BUp = true;
     public boolean BDown = false;
     public boolean BUp2 = true;
     public boolean BDown2 = false;
     public boolean BUp3 = true;
     public boolean BDown3 = false;
+    public boolean BUp4 = true;
+    public boolean BDown4 = false;
+    public boolean BUp5 = true;
+    public boolean BDown5 = false;
     public boolean passed = true;
     public boolean ppassed = false;
 
@@ -117,7 +125,9 @@ public class Keys extends JPanel {
 		Boss = new Rectangle(315, 315, BossW, BossH);
 		Boss2 = new Rectangle(892, 130, BossW - 10, BossH - 200);
 		Boss3 = new Rectangle(629, 38, BossW - 10, BossH - 300);
-        StartingPoint = new Rectangle(52, 52, charW, charH);
+		Boss4 = new Rectangle(972, 106, BossW - 10, BossH - 100);
+		Boss5 = new Rectangle(455, 130, BossW - 10, BossH - 250);
+		StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
         Bottom = new Rectangle(0, 720, 1280, 1);
         Left = new Rectangle(0, 0, 1, 720);
@@ -149,7 +159,7 @@ public class Keys extends JPanel {
         line13 = new Rectangle(1066, 500, LineW, 100000);
         Line14 = new Rectangle(1131, 0, LineW, 10);
         line14 = new Rectangle(1131, 60, LineW, 100000);
-        
+		}
        
     //KeyListener    
         if(isMoving){
@@ -279,7 +289,7 @@ public class Keys extends JPanel {
         }); }
         }
 
-	}
+	
 
     //}
 	
@@ -308,6 +318,8 @@ public class Keys extends JPanel {
         g.fillRect(Boss.x, Boss.y, Boss.width, Boss.height);
         g.fillRect(Boss2.x, Boss2.y, Boss2.width, Boss2.height);
         g.fillRect(Boss3.x, Boss3.y, Boss3.width, Boss3.height);
+        g.fillRect(Boss4.x, Boss4.y, Boss4.width, Boss4.height);
+        g.fillRect(Boss5.x, Boss5.y, Boss5.width, Boss5.height);
         
         if(RightSide)    
             g.setColor(Color.BLUE);
@@ -433,6 +445,22 @@ public class Keys extends JPanel {
         	BUp3 = false;        	
         	Boss3.y += 1;
         }
+        if(BUp4){
+        	BDown4 = false;       	
+        	Boss4.y -= 1;
+        }
+        if(BDown4){
+        	BUp4 = false;        	
+        	Boss4.y += 1;
+        }
+        if(BUp5){
+        	BDown5 = false;       	
+        	Boss5.y -= 1;
+        }
+        if(BDown5){
+        	BUp5 = false;        	
+        	Boss5.y += 1;
+        }
         
         if(BossMoving){
          	 
@@ -470,7 +498,30 @@ public class Keys extends JPanel {
          		BUp3 = true;
          	}
         	}
-        	
+        if(BossMoving4){
+       	 
+            
+         	if(Boss4.intersects(Top)){
+         		BUp4 = false;
+         		BDown4 = true;
+         	}
+         	if(Boss4.intersects(Bottom)){
+         		BDown4 = false;
+         		BUp4 = true;
+         	}
+        	}
+        if(BossMoving5){
+       	 
+            
+         	if(Boss5.intersects(Top)){
+         		BUp5 = false;
+         		BDown5 = true;
+         	}
+         	if(Boss3.intersects(Bottom)){
+         		BDown5 = false;
+         		BUp5 = true;
+         	}
+        	}
         
         
     //If Statements for walls    

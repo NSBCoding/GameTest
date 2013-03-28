@@ -8,8 +8,12 @@ import java.awt.*;
 public class Display extends JFrame{
 	
 
-	private static final long serialVersionUID = 1L;
 	
+	
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 public JPanel gp = (JPanel) getGlassPane();
 public ImagePanel i;
 public Keys k;

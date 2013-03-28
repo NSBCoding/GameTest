@@ -1,21 +1,17 @@
 package com.NSBCoding;
 
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-
-
-
-
 public class Keys extends JPanel {
 	
 	
-
-	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Rectangle character;
 	public Rectangle Boss;
 	public Rectangle Boss2;
@@ -26,6 +22,7 @@ public class Keys extends JPanel {
     public Rectangle Top;
     public Rectangle Bottom;
     public Rectangle Left;
+    public Rectangle Right;
     public Rectangle Line;
     public Rectangle Line2;
     public Rectangle InvLine;
@@ -107,9 +104,6 @@ public class Keys extends JPanel {
     public boolean BUp5 = true;
     public boolean BDown5 = false;
    
-
-
- 
     public Point mouse;
     
 	public Keys(Display f, ImagePanel i){
@@ -126,6 +120,7 @@ public class Keys extends JPanel {
         Top = new Rectangle(0, 0, 1280, 1);
         Bottom = new Rectangle(0, 720, 1280, 1);
         Left = new Rectangle(0, 0, 1, 720);
+        Right = new Rectangle(1280, 0, 1, 720);
         Line = new Rectangle(1180, 302, LineW, LineH);
         Line2 = new Rectangle(1180, 0, LineW,  Line2H);
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
@@ -263,7 +258,7 @@ public class Keys extends JPanel {
                 isMoving = false;
                 if(e.getKeyCode() == KeyEvent.VK_C) {
                     //mouseActive = false;
-                	System.out.println(System.getProperty("user.dir"));
+                	//System.out.println(System.getProperty("user.dir"));
                 	}
 				}
 
@@ -333,6 +328,7 @@ public class Keys extends JPanel {
         g.fillRect(Top.x, Top.y, Top.width, Top.height);
         g.fillRect(Bottom.x, Bottom.y, Bottom.width, Bottom.height);
         g.fillRect(Left.x, Left.y, Left.width, Left.height);
+        g.fillRect(Right.x, Right.y, Right.width, Right.height);
         g.fillRect(Line.x, Line.y, Line.width, Line.height);
         g.fillRect(Line2.x, Line2.y, Line2.width, Line2.height);
         g.setColor(Color.GREEN);
@@ -375,7 +371,7 @@ public class Keys extends JPanel {
             g.drawString("Without touching the black line", 126, 350);
             g.drawString("Careful that you can go to the left", 126, 400);
             g.drawString("Through the walls but not right.", 126, 450);
-            g.drawString("Be careful not to touch the Boss.", 126, 500);
+            g.drawString("Be careful not to touch the Busses.", 126, 500);
             g.setColor(Color.BLUE);           
             g.drawString("WASD / arrow", 251,550);
             g.drawString("keys to move", 251, 600);
@@ -570,6 +566,11 @@ public class Keys extends JPanel {
 
         }
 
+        if(character.intersects(Right))  {
+            character.x -= 10;
+            StopReset1 = true;
+
+        }
         
         if(character.intersects(Left))  {
             character.x += 10;

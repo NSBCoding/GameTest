@@ -19,6 +19,6 @@ public class Main extends JFrame{
 		f.setTitle("GameTest!");
 		f.setLocationRelativeTo(null);
 		f.setAlwaysOnTop(false);
-
+		
     }
 }

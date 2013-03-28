@@ -263,6 +263,7 @@ public class Keys extends JPanel {
                 isMoving = false;
                 if(e.getKeyCode() == KeyEvent.VK_C) {
                     //mouseActive = false;
+                	System.out.println(System.getProperty("user.dir"));
                 	}
 				}
 
@@ -293,7 +294,7 @@ public class Keys extends JPanel {
 	public void paintComponent(Graphics g){
         //if(Main.f.i.imagesLoaded) {
         super.paintComponent(g);
-        
+               
         this.setBackground(Color.WHITE);
         if(Reset){
             character.x -= 10;

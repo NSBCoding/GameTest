@@ -1,6 +1,7 @@
 package com.NSBCoding;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -54,6 +55,7 @@ public class Keys extends JPanel {
     public Rectangle line13;
     public Rectangle line14;
     public Rectangle Holder1;
+    public Rectangle Holder2;
    
 
 
@@ -69,6 +71,7 @@ public class Keys extends JPanel {
     public int FBossH = 60;
     public int BossW = 30;
     public int BossH = 400;
+    public int HolderW = 70;
     
 
     public long jumpingTime = 200;
@@ -85,7 +88,6 @@ public class Keys extends JPanel {
     public boolean up = false;
     public boolean down = false;
     public boolean jumping = false;
-    public boolean Passed = false;
     public boolean Reset = false;
     public boolean StopReset1 = false;
     public boolean Restart = false;
@@ -113,6 +115,7 @@ public class Keys extends JPanel {
     public boolean BDown4 = false;
     public boolean BUp5 = true;
     public boolean BDown5 = false;
+    public boolean Finished = false;
    
     public Point mouse;
     
@@ -137,7 +140,8 @@ public class Keys extends JPanel {
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
         InvLine2 = new Rectangle(1220, 0, InvRectW, InvRectH);
         InvLine3 = new Rectangle(1066, 450, LineW, 50);
-        Holder1 = new Rectangle(235, 300, 70, 5);
+        Holder1 = new Rectangle(235, 300, HolderW, 5);
+        Holder2 = new Rectangle(403, 120, HolderW - 20, 5);
         Line3 = new Rectangle(109, 0, LineW, 500);
         Line4 = new Rectangle(235, 0, LineW, 300);
         Line5 = new Rectangle(403, 0, LineW, 120);
@@ -206,8 +210,7 @@ public class Keys extends JPanel {
                     up = true; }
                 if(e.getKeyCode() == KeyEvent.VK_UP){
                     up = true; }
-                if(e.getKeyCode() == KeyEvent.VK_P){
-                    Passed = true; }
+              
                 if(e.getKeyCode() == KeyEvent.VK_SPACE) {
                    //jumping = true;
                     //new Thread(new thread().start();
@@ -266,8 +269,7 @@ public class Keys extends JPanel {
                     up = false; }
                 if(e.getKeyCode() == KeyEvent.VK_UP){
                     up = false; }
-                if(e.getKeyCode() == KeyEvent.VK_P){
-                    Passed = false; }
+                
                 if(e.getKeyCode() == KeyEvent.VK_R) {
                     Restart = false;
                 }
@@ -292,6 +294,7 @@ public class Keys extends JPanel {
                 mouse = new Point(e.getX(), e.getY() -25);
                  if(mouseActive){
                 	character.x = mouse.x;
+                	character.y = mouse.y;
                  }
 
                 repaint();
@@ -356,6 +359,7 @@ public class Keys extends JPanel {
         g.fillRect(Line2.x, Line2.y, Line2.width, Line2.height);
         g.setColor(Color.GREEN);
         g.fillRect(Holder1.x, Holder1.y, Holder1.width, Holder1.height);
+        g.fillRect(Holder2.x, Holder2.y, Holder2.width, Holder2.height);
         g.fillRect(Line3.x, Line3.y, Line3.width, Line3.height);
         g.fillRect(Line4.x, Line4.y, Line4.width, Line4.height);
         g.fillRect(Line5.x, Line5.y, Line5.width, Line5.height);
@@ -432,6 +436,7 @@ public class Keys extends JPanel {
             character.y = 52;
             Dead = false;
             DeathScreen = false;
+            Finished = false;
 
         }
 
@@ -679,7 +684,13 @@ public class Keys extends JPanel {
             StopReset1 = true;
 
         }
+        if(character.intersects(Holder2))  {
+            character.y += 10;
+            StopReset1 = true;
 
+        }
+
+        
         if(character.intersects(Top))  {
             character.y += 10;
             StopReset1 = true;
@@ -813,29 +824,32 @@ public class Keys extends JPanel {
 
             g.setColor(Color.BLUE);
             g.setFont(g.getFont().deriveFont(25f));
-            g.drawString("You", 496, 260);
-            g.drawString("Pass!", 496, 300);
+            
            
         }
         
-        if(character.intersects(InvLine2)) {
-
-            g.setColor(Color.BLUE);
-            g.setFont(g.getFont().deriveFont(25f));
-            g.drawString("You", 496, 260);
-            g.drawString("Pass!", 496, 300);
-            System.out.println("Ended");
+        if(character.intersects(InvLine2)) {                                  
             try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				
-				e.printStackTrace();
-			}
-            System.exit(0);	
-            
-            
+    			Thread.sleep(300);
+    		} catch (InterruptedException e) {
+    			
+    			e.printStackTrace();
+    		}    		            
+            Finished = true;           
         }
         
+        if(Finished){
+        	character.x = 52;
+            character.y = 52;
+        	g.setColor(Color.BLACK);
+            g.setFont(g.getFont().deriveFont(35f));
+        	 g.drawString("Thank you for Playing!", 440, 260);
+             g.drawString("You Passed!", 500, 300);
+             g.setColor(Color.BLUE);
+             g.setFont(g.getFont().deriveFont(30));
+             g.drawString("R to Restart", 500, 500);
+            
+        }
       
        
         if(character.intersects(StartingPoint)) {
@@ -875,6 +889,9 @@ public class Keys extends JPanel {
 
 		repaint();
 	}
+
+	
+	
 
 	}
 	

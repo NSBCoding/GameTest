@@ -431,11 +431,11 @@ public class Keys extends JPanel {
 
         if(FUp){
         	FDown = false;
-        	FinalBoss.y -= 2;
+        	FinalBoss.y -= 1.5;
         }
         if(FDown){
         	FUp = false;
-        	FinalBoss.y += 2;
+        	FinalBoss.y += 1;
         }
         if(FRight){
         	FLeft = false;

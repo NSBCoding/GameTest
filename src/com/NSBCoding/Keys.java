@@ -574,6 +574,7 @@ public class Keys extends JPanel {
         	}
         
         
+        
     //If Statements for walls    
         
         if(character.intersects(FinalBoss))  {

@@ -384,7 +384,7 @@ public class Keys extends JPanel {
 
         if(KeysIns){
             g.setColor(Color.BLACK);
-            g.setFont(g.getFont().deriveFont(30f));
+            g.setFont(g.getFont().deriveFont(25f));
             g.drawString("Your goal", 123, 140);
             g.drawString("is to get", 126, 200);
             g.drawString("your character", 126, 250);
@@ -409,7 +409,7 @@ public class Keys extends JPanel {
             
         if(DeathScreen){
         	g.setColor(Color.BLACK);
-        	g.setFont(g.getFont().deriveFont(30f));
+        	g.setFont(g.getFont().deriveFont(25f));
         	g.drawString("Press R to restart", 496, 300);
         	isMoving = false;
             }
@@ -418,7 +418,7 @@ public class Keys extends JPanel {
 
        if(Dead) {
             g.setColor(Color.RED);
-            g.setFont(g.getFont().deriveFont(30f));
+            g.setFont(g.getFont().deriveFont(25f));
             g.drawString("You Died", 496, 260); 
             g.drawString("Press R to restart", 496, 310); 
             isMoving = false;
@@ -804,7 +804,7 @@ public class Keys extends JPanel {
         if(character.intersects(InvLine)) {
 
             g.setColor(Color.BLUE);
-            g.setFont(g.getFont().deriveFont(30f));
+            g.setFont(g.getFont().deriveFont(25f));
             g.drawString("You", 496, 260);
             g.drawString("Pass!", 496, 300);
            
@@ -813,7 +813,7 @@ public class Keys extends JPanel {
         if(character.intersects(InvLine2)) {
 
             g.setColor(Color.BLUE);
-            g.setFont(g.getFont().deriveFont(30f));
+            g.setFont(g.getFont().deriveFont(25f));
             g.drawString("You", 496, 260);
             g.drawString("Pass!", 496, 300);
             System.out.println("Ended");
@@ -832,7 +832,7 @@ public class Keys extends JPanel {
        
         if(character.intersects(StartingPoint)) {
         g.setColor(Color.BLACK);
-        g.setFont(g.getFont().deriveFont(30f));
+        g.setFont(g.getFont().deriveFont(25f));
         g.drawString("Press K", 258, 100);
         g.drawString("for Instructions", 260, 145);
         g.setColor(Color.BLUE);

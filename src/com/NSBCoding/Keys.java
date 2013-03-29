@@ -28,6 +28,7 @@ public class Keys extends JPanel {
     public Rectangle Line2;
     public Rectangle InvLine;
     public Rectangle InvLine2;
+    public Rectangle InvLine3;
     public Rectangle Line3;
     public Rectangle Line4;
     public Rectangle Line5;
@@ -63,8 +64,8 @@ public class Keys extends JPanel {
     public int LineInv = 60;
     public int InvRectH = 720;
     public int InvRectW = 100;
-    public int FBossW = 10;
-    public int FBossH = 25;
+    public int FBossW = 20;
+    public int FBossH = 60;
     public int BossW = 30;
     public int BossH = 400;
     
@@ -99,8 +100,8 @@ public class Keys extends JPanel {
     public boolean BossMoving5 = true;
     public boolean FUp = true;
     public boolean FDown = false;
-    public boolean FLeft = true;
-    public boolean FRight = false;
+    public boolean FLeft = false;
+    public boolean FRight = true;
     public boolean BUp = true;
     public boolean BDown = false;
     public boolean BUp2 = true;
@@ -119,11 +120,11 @@ public class Keys extends JPanel {
 		//Rectangles Being Drawn
 		
 		character = new Rectangle(52, 52, charW, charH);
-		FinalBoss = new Rectangle(0, 0, FBossW, FBossH);
-		Boss = new Rectangle(315, 315, BossW, BossH);
-		Boss2 = new Rectangle(892, 130, BossW - 10, BossH - 200);
+		FinalBoss = new Rectangle(1103, 66, FBossW, FBossH);
+		Boss = new Rectangle(315, 315, BossW, BossH - 50);
+		Boss2 = new Rectangle(865, 130, BossW - 10, BossH - 200);
 		Boss3 = new Rectangle(629, 38, BossW - 10, BossH - 300);
-		Boss4 = new Rectangle(972, 106, BossW - 10, BossH - 100);
+		Boss4 = new Rectangle(952, 106, BossW - 10, BossH - 100);
 		Boss5 = new Rectangle(455, 130, BossW - 10, BossH - 250);
 		StartingPoint = new Rectangle(52, 52, charW, charH);
         Top = new Rectangle(0, 0, 1280, 1);
@@ -134,6 +135,7 @@ public class Keys extends JPanel {
         Line2 = new Rectangle(1180, 0, LineW,  Line2H);
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
         InvLine2 = new Rectangle(1220, 0, InvRectW, InvRectH);
+        InvLine3 = new Rectangle(1066, 450, LineW, 50);
         Line3 = new Rectangle(109, 0, LineW, 500);
         Line4 = new Rectangle(235, 0, LineW, 300);
         Line5 = new Rectangle(403, 0, LineW, 120);
@@ -149,13 +151,13 @@ public class Keys extends JPanel {
         
         line3 = new Rectangle(109, 600, LineW, 1000);
         line4 = new Rectangle(235, 360, LineW, 1000);
-        line5 = new Rectangle(403, 160, LineW, 1000);
-        line6 = new Rectangle(511, 70, LineW, 1000);        
+        line5 = new Rectangle(403, 180, LineW, 1000);
+        line6 = new Rectangle(511, 80, LineW, 1000);        
         line7 = new Rectangle(580, 80, LineW, 1000);        
         line8 = new Rectangle(671, 400, LineW, 10000);      
         line9 = new Rectangle(770, 250, LineW, 100000);      
         line10 = new Rectangle(838, 550, LineW, 10000);       
-        line11 = new Rectangle(936, 630, LineW, 100000);      
+        line11 = new Rectangle(936, 640, LineW, 100000);      
         line12 = new Rectangle(1016, 100, LineW, 100000);       
         line13 = new Rectangle(1066, 500, LineW, 100000);        
         line14 = new Rectangle(1131, 60, LineW, 100000);
@@ -311,6 +313,7 @@ public class Keys extends JPanel {
         g.fillRect(InvLine.x, InvLine.y, InvLine.width, InvLine.height);
         g.setColor(getBackground());
         g.fillRect(InvLine2.x, InvLine2.y, InvLine2.width, InvLine2.height);
+        g.fillRect(InvLine3.x, InvLine3.y, InvLine3.width, InvLine3.height);
         g.fillRect(StartingPoint.x, StartingPoint.y, StartingPoint.width, StartingPoint.height);
 
   // Boss and character being colored and filled
@@ -428,11 +431,11 @@ public class Keys extends JPanel {
 
         if(FUp){
         	FDown = false;
-        	FinalBoss.y -= 1;
+        	FinalBoss.y -= 2;
         }
         if(FDown){
         	FUp = false;
-        	FinalBoss.y += 1;
+        	FinalBoss.y += 2;
         }
         if(FRight){
         	FLeft = false;
@@ -443,7 +446,16 @@ public class Keys extends JPanel {
         	FinalBoss.x -= 1;
         }
         if(FMoving){
-        	 
+        	
+        	if(FinalBoss.intersects(InvLine3)){
+        		FLeft = false;
+        		FRight = true;
+        	} 
+        	if(FinalBoss.intersects(InvLine)){
+        		FRight = false;
+        		FLeft = true;
+        	}
+        	
         	if(FinalBoss.intersects(Top)){
         		FUp = false;
         		FDown = true;
@@ -468,6 +480,7 @@ public class Keys extends JPanel {
         		FLeft = false;
         		FRight = true;
         	}
+        	
         	
        	}
         

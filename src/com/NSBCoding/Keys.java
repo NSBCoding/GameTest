@@ -13,6 +13,7 @@ public class Keys extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	public Rectangle character;
+	public Rectangle FinalBoss;
 	public Rectangle Boss;
 	public Rectangle Boss2;
 	public Rectangle Boss3;
@@ -62,6 +63,8 @@ public class Keys extends JPanel {
     public int LineInv = 60;
     public int InvRectH = 720;
     public int InvRectW = 100;
+    public int FBossW = 10;
+    public int FBossH = 25;
     public int BossW = 30;
     public int BossH = 400;
     
@@ -88,11 +91,16 @@ public class Keys extends JPanel {
     public boolean Dead = false;
     public boolean DeathScreen = false;
     public boolean isMoving = true;
+    public boolean FMoving = true;
     public boolean BossMoving = true;
     public boolean BossMoving2 = true;
     public boolean BossMoving3 = true;
     public boolean BossMoving4 = true;
     public boolean BossMoving5 = true;
+    public boolean FUp = true;
+    public boolean FDown = false;
+    public boolean FLeft = true;
+    public boolean FRight = false;
     public boolean BUp = true;
     public boolean BDown = false;
     public boolean BUp2 = true;
@@ -111,6 +119,7 @@ public class Keys extends JPanel {
 		//Rectangles Being Drawn
 		
 		character = new Rectangle(52, 52, charW, charH);
+		FinalBoss = new Rectangle(0, 0, FBossW, FBossH);
 		Boss = new Rectangle(315, 315, BossW, BossH);
 		Boss2 = new Rectangle(892, 130, BossW - 10, BossH - 200);
 		Boss3 = new Rectangle(629, 38, BossW - 10, BossH - 300);
@@ -306,6 +315,9 @@ public class Keys extends JPanel {
 
   // Boss and character being colored and filled
         
+       g.setColor(Color.BLUE);
+       g.fillRect(FinalBoss.x, FinalBoss.y, FinalBoss.width, FinalBoss.height);
+        
         g.setColor(Color.RED);
         g.fillRect(Boss.x, Boss.y, Boss.width, Boss.height);
         g.fillRect(Boss2.x, Boss2.y, Boss2.width, Boss2.height);
@@ -414,6 +426,51 @@ public class Keys extends JPanel {
             Reset = false;
         }
 
+        if(FUp){
+        	FDown = false;
+        	FinalBoss.y -= 1;
+        }
+        if(FDown){
+        	FUp = false;
+        	FinalBoss.y += 1;
+        }
+        if(FRight){
+        	FLeft = false;
+        	FinalBoss.x += 1;
+        }
+        if(FLeft){
+        	FRight = false;
+        	FinalBoss.x -= 1;
+        }
+        if(FMoving){
+        	 
+        	if(FinalBoss.intersects(Top)){
+        		FUp = false;
+        		FDown = true;
+        	}
+        	if(FinalBoss.intersects(Bottom)){
+        		FDown = false;
+        		FUp = true;
+        	}
+        	if(FinalBoss.intersects(Line)){
+        		FRight = false;
+        		FLeft = true;
+        	}
+        	if(FinalBoss.intersects(Line2)){
+        		FRight = false;
+        		FLeft = true;
+        	}
+        	if(FinalBoss.intersects(Line14)){
+        		FLeft = false;
+        		FRight = true;
+        	}
+        	if(FinalBoss.intersects(line14)){
+        		FLeft = false;
+        		FRight = true;
+        	}
+        	
+       	}
+        
         if(BUp){
         	BDown = false;
         	Boss.y -= 1;
@@ -518,6 +575,16 @@ public class Keys extends JPanel {
         
         
     //If Statements for walls    
+        
+        if(character.intersects(FinalBoss))  {
+            
+            Dead = true;
+            isMoving = false;
+            DeathScreen = true;
+            character.x = 40000;
+           
+
+        }
         
         if(character.intersects(Boss))  {
             

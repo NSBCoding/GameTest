@@ -219,6 +219,12 @@ public class Keys extends JPanel {
                  if(e.getKeyCode() == KeyEvent.VK_C) {
                      //mouseActive = true;
                 	 }
+                 if(e.getKeyCode() == KeyEvent.VK_SHIFT) {
+                	 up = false;
+                	 down = false;
+                	 left = false;
+                	 right = false;
+                 }
                  
                 } 
        

@@ -395,9 +395,10 @@ public class Keys extends JPanel {
             g.drawString("Be careful not to touch the Busses.", 126, 500);
             g.setColor(Color.BLUE);           
             g.drawString("WASD / arrow", 251,550);
-            g.drawString("keys to move", 251, 600);
+            g.drawString("keys to move", 251, 580);
+            g.drawString("Shift in case of panic", 251, 615);
             g.drawString("R to Reset", 251, 650);
-            g.drawString("Escape to Quit", 251, 670);
+            g.drawString("Escape to Quit", 251, 680);
         
    //IF Statements        
         
@@ -836,7 +837,7 @@ public class Keys extends JPanel {
         g.drawString("for Instructions", 260, 145);
         g.setColor(Color.BLUE);
         g.drawString("WASD / arrow", 251,550);
-        g.drawString("keys to move", 251, 600);
+        g.drawString("keys to move", 251, 580);
         }
   //If Statements for character movement
 

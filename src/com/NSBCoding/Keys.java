@@ -53,6 +53,7 @@ public class Keys extends JPanel {
     public Rectangle line12;
     public Rectangle line13;
     public Rectangle line14;
+    public Rectangle Holder1;
    
 
 
@@ -136,6 +137,7 @@ public class Keys extends JPanel {
         InvLine = new Rectangle(1180, 242, LineW, LineInv);
         InvLine2 = new Rectangle(1220, 0, InvRectW, InvRectH);
         InvLine3 = new Rectangle(1066, 450, LineW, 50);
+        Holder1 = new Rectangle(235, 300, 70, 5);
         Line3 = new Rectangle(109, 0, LineW, 500);
         Line4 = new Rectangle(235, 0, LineW, 300);
         Line5 = new Rectangle(403, 0, LineW, 120);
@@ -353,6 +355,7 @@ public class Keys extends JPanel {
         g.fillRect(Line.x, Line.y, Line.width, Line.height);
         g.fillRect(Line2.x, Line2.y, Line2.width, Line2.height);
         g.setColor(Color.GREEN);
+        g.fillRect(Holder1.x, Holder1.y, Holder1.width, Holder1.height);
         g.fillRect(Line3.x, Line3.y, Line3.width, Line3.height);
         g.fillRect(Line4.x, Line4.y, Line4.width, Line4.height);
         g.fillRect(Line5.x, Line5.y, Line5.width, Line5.height);
@@ -668,6 +671,11 @@ public class Keys extends JPanel {
 
         if(character.intersects(Bottom))  {
             character.y -= 10;
+            StopReset1 = true;
+
+        }
+        if(character.intersects(Holder1))  {
+            character.y += 10;
             StopReset1 = true;
 
         }
